@@ -1,0 +1,34 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<div class="container bx-5 w-100">
+    <center class="w-100"><h2 style="margin-top: 10px; background-color:rgb(255, 213, 0);color: black">Welcome to user login</h2></center>
+        <div class="row center-block">
+            <div class="col-sm-10 mx-auto" style="margin-top: 50px">
+                <h2>Login</h2>
+
+                <form action="{% url 'signin' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row ">
+                        <label for="example-email-input" class="col-3 col-form-label">Username: </label>
+                        <div class="col-10 w-100">
+                            <input name='name' class="form-control" type="text" id="example-email-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-3 col-form-label">Password: </label>
+                        <div class="col-10">
+                            <input name='password' class="form-control" type="password">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="Submit" class="btn float-center width-auto" style="background-color:rgb(255, 213, 0)">Sign in</button>
+                    </div>
+
+                </form>
+                <p>{{error}}</p>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

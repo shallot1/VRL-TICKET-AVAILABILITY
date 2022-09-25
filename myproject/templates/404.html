@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+    #err{
+         font-weight:bold; 
+         color:#333;
+         font-family:"verdana"
+        }
+    </style>
+</head>
+
+<body id="err">
+<!-- <h1>Error! Cannot find this page</h1> -->
+<!-- <h2>Please enter valid URL</h2> -->
+{% load static %}
+<div class="container center ml-auto p-auto w-100"  style="text-align:center" >
+<img src="{%static 'mysite/images/error404.jpg' %}" alt="error-picture" width="950px">
+
+</div>
+<div class="container" style="text-align:center ;">
+    <button style='text-decoration:none; border:none;'><b> <a href="{% url 'home' %}">Go back to Home Page</a></b> </button>
+</div>
+
+</body>

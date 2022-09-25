@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-0 mb-3">
+    <img src="{%static 'mysite/images/contact.jpg' %}" class="d-block w-100 mx-0" alt="contact-img">
+</div>
+<div class="container mb-3 ">
+    <h1 class="text-center">Contact us</h1>
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="cname" class="form-label">Name</label>
+            <input type="text" class="form-control" id="cname" name="cname" placeholder="Enter Your Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="cemail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="cemail" name="cemail" placeholder="example@mail.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="cphone" class="form-label">Phone Number</label>
+            <input type="phone" class="form-control" id="cphone" name="cphone" placeholder="Enter Your Phone Number">
+        </div>
+        <div class="mb-3">
+            <label for="cdesc" class="form-label">Tell us what you want to contact for....</label>
+            <textarea class="form-control" id="cdesc" rows="3" name="cdesc"></textarea>
+        </div>
+        <button class="btn btn-outline-info" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
